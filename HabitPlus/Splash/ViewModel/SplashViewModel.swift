@@ -13,7 +13,11 @@ class SplashViewModel: ObservableObject {
     func onAppear() {
         // faz algo assincrono e muda o estado da uiState
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            self.uiState = .error("Not Found")
+//            self.uiState = .error("Not Found")
+            self.uiState = .goToLoginScreen
         }
+    }
+    func logInView() -> some View {
+        return SplashVIewRouter.makeLogInView()
     }
 }

@@ -10,13 +10,16 @@ import SwiftUI
 struct SplashView: View {
     @ObservedObject var viewModel: SplashViewModel
     
+    @State var emaiil = ""
+    @State var password = ""
+    
     var body: some View {
         Group {
             switch viewModel.uiState {
             case .loading:
                 loadingView()
             case .goToLoginScreen:
-                Text("Login Screen")
+                viewModel.logInView()
             case .goToHomeScreen:
                 Text("Home Screen")
             case .error(let msg):

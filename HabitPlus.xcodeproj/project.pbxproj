@@ -13,6 +13,9 @@
 		E39CAD862B35146E0035244A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD852B35146E0035244A /* SplashView.swift */; };
 		E39CAD892B36F5040035244A /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD882B36F5040035244A /* SplashUIState.swift */; };
 		E39CAD8C2B372ECB0035244A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD8B2B372ECB0035244A /* SplashViewModel.swift */; };
+		E39CAD922B3752380035244A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD912B3752380035244A /* LogInView.swift */; };
+		E39CAD942B37525D0035244A /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD932B37525D0035244A /* LogInViewModel.swift */; };
+		E39CAD962B3753660035244A /* SplashVIewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD952B3753660035244A /* SplashVIewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		E39CAD852B35146E0035244A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E39CAD882B36F5040035244A /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		E39CAD8B2B372ECB0035244A /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		E39CAD912B3752380035244A /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		E39CAD932B37525D0035244A /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		E39CAD952B3753660035244A /* SplashVIewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVIewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 		E39CAD742B3513CE0035244A /* HabitPlus */ = {
 			isa = PBXGroup;
 			children = (
+				E39CAD8D2B3751F50035244A /* LogIn */,
 				E39CAD832B3514490035244A /* Splash */,
 				E39CAD752B3513CE0035244A /* HabitPlusApp.swift */,
 				E39CAD792B3513CF0035244A /* Assets.xcassets */,
@@ -74,9 +81,9 @@
 		E39CAD832B3514490035244A /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				E39CAD842B35145B0035244A /* View */,
 				E39CAD8A2B372C660035244A /* ViewModel */,
 				E39CAD872B36F4810035244A /* Model */,
-				E39CAD842B35145B0035244A /* View */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -101,8 +108,42 @@
 			isa = PBXGroup;
 			children = (
 				E39CAD8B2B372ECB0035244A /* SplashViewModel.swift */,
+				E39CAD952B3753660035244A /* SplashVIewRouter.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E39CAD8D2B3751F50035244A /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				E39CAD8E2B3752060035244A /* View */,
+				E39CAD902B37521D0035244A /* Model */,
+				E39CAD8F2B3752120035244A /* ViewModel */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		E39CAD8E2B3752060035244A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E39CAD912B3752380035244A /* LogInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E39CAD8F2B3752120035244A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E39CAD932B37525D0035244A /* LogInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E39CAD902B37521D0035244A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39CAD922B3752380035244A /* LogInView.swift in Sources */,
+				E39CAD962B3753660035244A /* SplashVIewRouter.swift in Sources */,
 				E39CAD892B36F5040035244A /* SplashUIState.swift in Sources */,
 				E39CAD762B3513CE0035244A /* HabitPlusApp.swift in Sources */,
 				E39CAD862B35146E0035244A /* SplashView.swift in Sources */,
+				E39CAD942B37525D0035244A /* LogInViewModel.swift in Sources */,
 				E39CAD8C2B372ECB0035244A /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
