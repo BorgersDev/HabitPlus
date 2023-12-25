@@ -18,44 +18,59 @@ struct LogInView: View {
     @State var navigationBarHidden = true
     
     var body: some View {
-        NavigationView {
-            
-            ScrollView(showsIndicators: false){
-                                    
-                    Spacer(minLength: 150)
+        ZStack {
+            if case LogInUIState.goToHomeScreen = viewModel.uiState {
+                viewModel.homeView()
+            } else {
+                NavigationView {
                     
-                    VStack(alignment: .center) {
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.horizontal, 40)
+                    ScrollView(showsIndicators: false){
+                                            
+                            Spacer(minLength: 150)
+                            
+                            VStack(alignment: .center) {
+                                Image("logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(.horizontal, 40)
+                                
+                                Text("Login")
+                                    .foregroundColor(.orange)
+                                    .font(.title.bold())
+                                    .padding(.bottom, 8)
+                                
+                                emailField
+                                
+                                passwordField
+                                
+                                enterButton
+                                
+                                registerLink
+                                
+                                Text("Copyright @YYY")
+                                    .foregroundColor(Color.gray)
+                                    .font(Font.system(size: 16).bold())
+                                    .padding(.top, 16)
+                                
+                            }
+                        if case LogInUIState.error(let value ) = viewModel.uiState{
+                            Text("")
+                                .alert(isPresented: .constant(true)) {
+                                    Alert(title:Text("Habit"), message:Text(value), dismissButton: .default(Text("Ok")) {
+                                        // happens after pressing "Ok"
+                                    })
+                                }
+                        }
                         
-                        Text("Login")
-                            .foregroundColor(.orange)
-                            .font(.title.bold())
-                            .padding(.bottom, 8)
-                        
-                        emailField
-                        
-                        passwordField
-                        
-                        enterButton
-                        
-                        registerLink
-                        
-                        Text("Copyright @YYY")
-                            .foregroundColor(Color.gray)
-                            .font(Font.system(size: 16).bold())
-                            .padding(.top, 16)
-                        
-                    }
-                
-            }.frame(maxWidth: .infinity,  maxHeight: .infinity)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .navigationBarTitle("Login", displayMode: .inline)
-                .navigationBarHidden(navigationBarHidden)
+                    }.frame(maxWidth: .infinity,  maxHeight: .infinity)
+                        .padding(.horizontal, 25)
+                        .background(Color.white)
+                        .navigationBarTitle("Login", displayMode: .inline)
+                        .navigationBarHidden(navigationBarHidden)
+                }
+            }
         }
+        
     }
 }
 
@@ -77,7 +92,7 @@ extension LogInView {
 extension LogInView {
     var enterButton: some View {
         Button("Entrar") {
-            // click event
+            viewModel.login(email: email, password: password)
         }
     }
 }
@@ -87,7 +102,7 @@ extension LogInView {
         
             ZStack {
                 NavigationLink(
-                    destination: Text("Sign Up screen"),
+                    destination: viewModel.signUpView(),
                     tag: 1,
                     selection: $action,
                     label: {EmptyView()})

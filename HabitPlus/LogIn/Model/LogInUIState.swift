@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum LogInUIState {
+    case none
+    case loading
+    case goToHomeScreen
+    case error(String)
+}
