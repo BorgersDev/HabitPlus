@@ -21,6 +21,10 @@
 		E39CADA02B3843B60035244A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD9F2B3843B60035244A /* HomeViewModel.swift */; };
 		E39CADA22B3843C20035244A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADA12B3843C20035244A /* HomeView.swift */; };
 		E39CADA82B38D68F0035244A /* SignUpVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADA72B38D68F0035244A /* SignUpVIew.swift */; };
+		E39CADAC2B3A15210035244A /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADAB2B3A15210035244A /* Gender.swift */; };
+		E39CADAE2B3A1EE80035244A /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADAD2B3A1EE80035244A /* SignUpUIState.swift */; };
+		E39CADB02B3A1F2C0035244A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADAF2B3A1F2C0035244A /* SignUpViewModel.swift */; };
+		E39CADB22B3A1FD50035244A /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADB12B3A1FD50035244A /* SignUpViewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		E39CAD9F2B3843B60035244A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E39CADA12B3843C20035244A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E39CADA72B38D68F0035244A /* SignUpVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVIew.swift; sourceTree = "<group>"; };
+		E39CADAB2B3A15210035244A /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		E39CADAD2B3A1EE80035244A /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
+		E39CADAF2B3A1F2C0035244A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		E39CADB12B3A1FD50035244A /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 		E39CAD742B3513CE0035244A /* HabitPlus */ = {
 			isa = PBXGroup;
 			children = (
+				E39CADA92B3A15080035244A /* Common */,
 				E39CADA32B38D66A0035244A /* SignUp */,
 				E39CAD9B2B38438E0035244A /* Home */,
 				E39CAD8D2B3751F50035244A /* LogIn */,
@@ -206,6 +215,7 @@
 		E39CADA42B38D6760035244A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E39CADAD2B3A1EE80035244A /* SignUpUIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +223,8 @@
 		E39CADA52B38D67C0035244A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E39CADAF2B3A1F2C0035244A /* SignUpViewModel.swift */,
+				E39CADB12B3A1FD50035244A /* SignUpViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,6 +235,22 @@
 				E39CADA72B38D68F0035244A /* SignUpVIew.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E39CADA92B3A15080035244A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E39CADAA2B3A15150035244A /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E39CADAA2B3A15150035244A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E39CADAB2B3A15210035244A /* Gender.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,11 +326,15 @@
 				E39CADA82B38D68F0035244A /* SignUpVIew.swift in Sources */,
 				E39CAD922B3752380035244A /* LogInView.swift in Sources */,
 				E39CAD962B3753660035244A /* SplashVIewRouter.swift in Sources */,
+				E39CADB22B3A1FD50035244A /* SignUpViewRouter.swift in Sources */,
 				E39CAD892B36F5040035244A /* SplashUIState.swift in Sources */,
 				E39CADA02B3843B60035244A /* HomeViewModel.swift in Sources */,
 				E39CAD762B3513CE0035244A /* HabitPlusApp.swift in Sources */,
 				E39CADA22B3843C20035244A /* HomeView.swift in Sources */,
+				E39CADB02B3A1F2C0035244A /* SignUpViewModel.swift in Sources */,
+				E39CADAE2B3A1EE80035244A /* SignUpUIState.swift in Sources */,
 				E39CAD862B35146E0035244A /* SplashView.swift in Sources */,
+				E39CADAC2B3A15210035244A /* Gender.swift in Sources */,
 				E39CAD982B383DD60035244A /* LogInUIState.swift in Sources */,
 				E39CAD942B37525D0035244A /* LogInViewModel.swift in Sources */,
 				E39CAD9A2B3843440035244A /* LogInViewRouter.swift in Sources */,
