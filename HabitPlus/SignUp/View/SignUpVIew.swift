@@ -66,43 +66,62 @@ struct SignUpView: View {
 }
 extension SignUpView {
     var fullNameField: some View {
-        TextField(" Full Name", text: $fullName)
-            .border(Color.black)
+        EditTextView(text: $fullName,
+                     placeholder: "Full Name",
+                     keyboard: .alphabet,
+                     error: "error",
+                     failure: fullName.count < 3
+)
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        TextField(" Email", text: $email)
-            .border(Color.black)
+        EditTextView(text: $email,
+                     placeholder: "E-mail",
+                     keyboard: .emailAddress,
+                     error: "Invalid e-mail",
+                     failure: !email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        TextField(" Password", text: $password)
-            .border(Color.black)
+        EditTextView(text: $password,
+                     placeholder: "Password",
+                     keyboard: .emailAddress,
+                     error: "Password should contain \n at least 8 characters",
+                     failure: password.count < 8)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        TextField(" Document", text: $document)
-            .border(Color.black)
+        EditTextView(text: $document,
+                     placeholder: "Document",
+                     keyboard: .numberPad,
+                     error: "Invalid Document",
+                     failure: document.count < 5)
     }
 }
 
 extension SignUpView {
     var phoneNumberField: some View {
-        TextField(" Phone Number", text: $phoneNumber)
-            .border(Color.black)
+        EditTextView(text: $phoneNumber,
+                     placeholder: "Phone Number",
+                     keyboard: .phonePad,
+                     error: "Invalid Phone number",
+                     failure: phoneNumber.count < 10 || phoneNumber.count > 13)
     }
 }
 
 extension SignUpView {
     var birthDateField: some View {
-        TextField(" Birth date", text: $birthDate)
-            .border(Color.black)
+        EditTextView(text: $birthDate,
+                     placeholder: "Birth Date",
+                     keyboard: .default,
+                     error: "mm/dd/yyyy",
+                     failure: birthDate.count != 10 )
     }
 }
 
@@ -121,9 +140,15 @@ extension SignUpView {
 
 extension SignUpView {
     var enterButton: some View {
-        Button("Register account") {
+        LoadingButtonView(action: {
             viewModel.signUp()
-        }
+        }, text: "Register account",showProgress: self.viewModel.uiState == SignUpUIState.loading, disabled: !email.isEmail() || 
+                          password.count < 8 ||
+                          fullName.count < 3 ||
+                          phoneNumber.count < 10 ||
+                          phoneNumber.count > 13 ||
+                          birthDate.count != 10)
+        
     }
 }
 

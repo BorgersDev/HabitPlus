@@ -26,7 +26,7 @@ struct LogInView: View {
                     
                     ScrollView(showsIndicators: false){
                                             
-                            Spacer(minLength: 150)
+                            Spacer(minLength: 110)
                             
                             VStack(alignment: .center) {
                                 Image("logo")
@@ -47,10 +47,10 @@ struct LogInView: View {
                                 
                                 registerLink
                                 
-                                Text("Copyright @YYY")
+                                Text("Copyright @BSCO")
                                     .foregroundColor(Color.gray)
-                                    .font(Font.system(size: 16).bold())
-                                    .padding(.top, 16)
+                                    .font(Font.system(size: 13).bold())
+                                    .padding(.top, 30)
                                 
                             }
                         if case LogInUIState.error(let value ) = viewModel.uiState{
@@ -64,7 +64,6 @@ struct LogInView: View {
                         
                     }.frame(maxWidth: .infinity,  maxHeight: .infinity)
                         .padding(.horizontal, 25)
-                        .background(Color.white)
                         .navigationBarTitle("Login", displayMode: .inline)
                         .navigationBarHidden(navigationBarHidden)
                 }
@@ -76,31 +75,41 @@ struct LogInView: View {
 
 extension LogInView {
     var emailField: some View {
-        TextField(" Email", text: $email)
-            .border(Color.black)
-            .padding(.horizontal, 33)
+        EditTextView(text: $email, 
+                     placeholder: "E-mail",
+                     keyboard: .emailAddress,
+                     error: "Invalid email",
+                     failure: !email.isEmail())
     }
 }
 
 extension LogInView {
     var passwordField: some View {
-        SecureField("  Password", text: $password)
-            .border(Color.black)
-            .padding(.horizontal, 33)
+        EditTextView(text: $password,
+        placeholder: "Password",
+        keyboard: .emailAddress,
+        error: "Invalid password",
+        failure: password.count < 8,
+        isSecure: true)
     }
 }
 extension LogInView {
     var enterButton: some View {
-        Button("Entrar") {
+        LoadingButtonView(action: {
             viewModel.login(email: email, password: password)
-        }
+        }, text: "Log in",showProgress: self.viewModel.uiState == LogInUIState.loading, disabled: !email.isEmail() || password.count < 8)
+        .padding(.top, 15)
     }
+        
 }
 
 extension LogInView {
     var registerLink: some View {
         
             ZStack {
+                Text("Don't have an account?")
+                    .foregroundColor(.gray)
+                
                 NavigationLink(
                     destination: viewModel.signUpView(),
                     tag: 1,
@@ -116,4 +125,8 @@ extension LogInView {
 
 #Preview {
     LogInView(viewModel: LogInViewModel())
+}
+#Preview {
+    LogInView(viewModel: LogInViewModel())
+        .colorScheme(.dark)
 }
