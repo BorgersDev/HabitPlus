@@ -10,9 +10,6 @@ import SwiftUI
 struct LogInView: View {
     @ObservedObject var viewModel: LogInViewModel
     
-    @State var email = ""
-    @State var password = ""
-    
     @State var action: Int? = 0
     
     @State var navigationBarHidden = true
@@ -75,29 +72,29 @@ struct LogInView: View {
 
 extension LogInView {
     var emailField: some View {
-        EditTextView(text: $email, 
+        EditTextView(text: $viewModel.email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "Invalid email",
-                     failure: !email.isEmail())
+                     failure: !viewModel.email.isEmail())
     }
 }
 
 extension LogInView {
     var passwordField: some View {
-        EditTextView(text: $password,
+        EditTextView(text: $viewModel.password,
         placeholder: "Password",
         keyboard: .emailAddress,
         error: "Invalid password",
-        failure: password.count < 8,
+                     failure: viewModel.password.count < 8,
         isSecure: true)
     }
 }
 extension LogInView {
     var enterButton: some View {
         LoadingButtonView(action: {
-            viewModel.login(email: email, password: password)
-        }, text: "Log in",showProgress: self.viewModel.uiState == LogInUIState.loading, disabled: !email.isEmail() || password.count < 8)
+            viewModel.login()
+        }, text: "Log in",showProgress: self.viewModel.uiState == LogInUIState.loading, disabled: !viewModel.email.isEmail() || viewModel.password.count < 8)
         .padding(.top, 15)
     }
         

@@ -9,14 +9,6 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
-    @State var document = ""
-    @State var phoneNumber = ""
-    @State var birthDate = ""
-    @State var gender = Gender.male
-    
     @ObservedObject var viewModel: SignUpViewModel
     
     
@@ -26,12 +18,12 @@ struct SignUpView: View {
         ZStack {
             ScrollView (showsIndicators: false) {
                 
-                Spacer(minLength: 75)
+                Spacer(minLength: 40)
                 
-                VStack (alignment: .center, spacing: 12) {
+                VStack (alignment: .leading, spacing: 12) {
                     Text("Sign Up")
                         .foregroundColor(.orange)
-                        .font(.title)
+                        .font(.title.bold())
                         .padding(.bottom, 20)
                     
                     fullNameField
@@ -66,68 +58,68 @@ struct SignUpView: View {
 }
 extension SignUpView {
     var fullNameField: some View {
-        EditTextView(text: $fullName,
+        EditTextView(text: $viewModel.fullName,
                      placeholder: "Full Name",
                      keyboard: .alphabet,
                      error: "error",
-                     failure: fullName.count < 3
+                     failure: viewModel.fullName.count < 3
 )
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        EditTextView(text: $email,
+        EditTextView(text: $viewModel.email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "Invalid e-mail",
-                     failure: !email.isEmail())
+                     failure: !viewModel.email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        EditTextView(text: $password,
+        EditTextView(text: $viewModel.password,
                      placeholder: "Password",
                      keyboard: .emailAddress,
                      error: "Password should contain \n at least 8 characters",
-                     failure: password.count < 8)
+                     failure: viewModel.password.count < 8)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        EditTextView(text: $document,
+        EditTextView(text: $viewModel.document,
                      placeholder: "Document",
                      keyboard: .numberPad,
                      error: "Invalid Document",
-                     failure: document.count < 5)
+                     failure: viewModel.document.count < 5)
     }
 }
 
 extension SignUpView {
     var phoneNumberField: some View {
-        EditTextView(text: $phoneNumber,
+        EditTextView(text: $viewModel.phoneNumber,
                      placeholder: "Phone Number",
                      keyboard: .phonePad,
                      error: "Invalid Phone number",
-                     failure: phoneNumber.count < 10 || phoneNumber.count > 13)
+                     failure: viewModel.phoneNumber.count < 10 || viewModel.phoneNumber.count > 13)
     }
 }
 
 extension SignUpView {
     var birthDateField: some View {
-        EditTextView(text: $birthDate,
+        EditTextView(text: $viewModel.birthDate,
                      placeholder: "Birth Date",
                      keyboard: .default,
                      error: "mm/dd/yyyy",
-                     failure: birthDate.count != 10 )
+                     failure: viewModel.birthDate.count != 10 )
     }
 }
 
 extension SignUpView {
     var genderField: some View {
-        Picker("Gender", selection: $gender) {
+        Picker("Gender", selection: $viewModel.gender) {
             ForEach(Gender.allCases, id: \.self) {
                 value in Text(value.rawValue)
                     .tag(value)
@@ -142,12 +134,12 @@ extension SignUpView {
     var enterButton: some View {
         LoadingButtonView(action: {
             viewModel.signUp()
-        }, text: "Register account",showProgress: self.viewModel.uiState == SignUpUIState.loading, disabled: !email.isEmail() || 
-                          password.count < 8 ||
-                          fullName.count < 3 ||
-                          phoneNumber.count < 10 ||
-                          phoneNumber.count > 13 ||
-                          birthDate.count != 10)
+        }, text: "Register account",showProgress: self.viewModel.uiState == SignUpUIState.loading, disabled: !viewModel.email.isEmail() || 
+                          viewModel.password.count < 8 ||
+                          viewModel.fullName.count < 3 ||
+                          viewModel.phoneNumber.count < 10 ||
+                          viewModel.phoneNumber.count > 13 ||
+                          viewModel.birthDate.count != 10)
         
     }
 }

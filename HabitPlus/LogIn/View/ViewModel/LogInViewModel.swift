@@ -14,6 +14,10 @@ class LogInViewModel: ObservableObject {
     
     private let publisher = PassthroughSubject<Bool, Never>()
     
+    @Published var email = ""
+    @Published var password = ""
+    
+    
     @Published var uiState: LogInUIState = .none
     
     init() {
@@ -31,7 +35,7 @@ class LogInViewModel: ObservableObject {
     }
     
     
-    func login(email: String, password: String){
+    func login(){
         self.uiState = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
               self.uiState = .error("User not found")
