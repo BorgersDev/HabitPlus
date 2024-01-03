@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "00B7C15D-78DB-46AD-9028-930581E34526"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C0BE13A-6B65-4FAD-9E83-36B1488C8D80"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HabitPlus/Common/Network/WebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "postUser(fullName:email:password:document:phoneNumber:birthDate:gender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C0BE13A-6B65-4FAD-9E83-36B1488C8D80 - 4762cfa1eb34a83a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static HabitPlus.WebService.postUser(fullName: Swift.String, email: Swift.String, password: Swift.String, document: Swift.String, phoneNumber: Swift.String, birthDate: Swift.String, gender: Swift.Int) -&gt; ()"
+                  moduleName = "HabitPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/borges/Developer/HabitPlus/HabitPlus/Common/Network/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "8C0BE13A-6B65-4FAD-9E83-36B1488C8D80 - 4762cfa1eb34a83a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static HabitPlus.WebService.postUser(fullName: Swift.String, email: Swift.String, password: Swift.String, document: Swift.String, phoneNumber: Swift.String, birthDate: Swift.String, gender: Swift.Int) -&gt; ()"
+                  moduleName = "HabitPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/borges/Developer/HabitPlus/HabitPlus/Common/Network/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

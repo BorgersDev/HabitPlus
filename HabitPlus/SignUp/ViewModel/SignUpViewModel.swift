@@ -25,11 +25,19 @@ class SignUpViewModel: ObservableObject {
     func signUp() {
         self.uiState = .loading
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-//              self.uiState = .error("Email already used")
-            self.uiState = .sucess
-            self.publisher.send(true)
-        }
+        WebService.postUser(fullName: fullName,
+                            email: email,
+                            password: password,
+                            document: document,
+                            phoneNumber: phoneNumber,
+                            birthDate: birthDate,
+                            gender: gender.index)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+////              self.uiState = .error("Email already used")
+//            self.uiState = .sucess
+//            self.publisher.send(true)
+//        }
     }
 }
 
