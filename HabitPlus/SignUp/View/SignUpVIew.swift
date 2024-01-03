@@ -112,7 +112,7 @@ extension SignUpView {
         EditTextView(text: $viewModel.birthDate,
                      placeholder: "Birth Date",
                      keyboard: .default,
-                     error: "mm/dd/yyyy",
+                     error: "YYYY/MM/DD",
                      failure: viewModel.birthDate.count != 10 )
     }
 }

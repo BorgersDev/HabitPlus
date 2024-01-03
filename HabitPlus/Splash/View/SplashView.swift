@@ -54,3 +54,7 @@ extension SplashView {
 #Preview {
     SplashView(viewModel: SplashViewModel())
 }
+#Preview {
+    SplashView(viewModel: SplashViewModel())
+        .preferredColorScheme(.dark)
+}

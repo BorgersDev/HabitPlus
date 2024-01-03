@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E3568C7A2B3D6F5D002BE9E7 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3568C792B3D6F5D002BE9E7 /* LoadingButtonView.swift */; };
+		E3568C7D2B44E221002BE9E7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3568C7C2B44E221002BE9E7 /* WebService.swift */; };
 		E36A63B72B3C8A1A006C0F4B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36A63B62B3C8A1A006C0F4B /* String+Extension.swift */; };
 		E39CAD762B3513CE0035244A /* HabitPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD752B3513CE0035244A /* HabitPlusApp.swift */; };
 		E39CAD7A2B3513CF0035244A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39CAD792B3513CF0035244A /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		E3568C792B3D6F5D002BE9E7 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
+		E3568C7C2B44E221002BE9E7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		E36A63B62B3C8A1A006C0F4B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E39CAD722B3513CE0035244A /* HabitPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39CAD752B3513CE0035244A /* HabitPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPlusApp.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3568C7B2B44E202002BE9E7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E3568C7C2B44E221002BE9E7 /* WebService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		E36A63B52B3C89EF006C0F4B /* Lang */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		E39CADA92B3A15080035244A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E3568C7B2B44E202002BE9E7 /* Network */,
 				E36A63B52B3C89EF006C0F4B /* Lang */,
 				E3F173E92B3B35640084413D /* View */,
 				E39CADAA2B3A15150035244A /* Model */,
@@ -368,6 +379,7 @@
 				E39CADA02B3843B60035244A /* HomeViewModel.swift in Sources */,
 				E39CAD762B3513CE0035244A /* HabitPlusApp.swift in Sources */,
 				E39CADA22B3843C20035244A /* HomeView.swift in Sources */,
+				E3568C7D2B44E221002BE9E7 /* WebService.swift in Sources */,
 				E36A63B72B3C8A1A006C0F4B /* String+Extension.swift in Sources */,
 				E39CADB02B3A1F2C0035244A /* SignUpViewModel.swift in Sources */,
 				E39CADAE2B3A1EE80035244A /* SignUpUIState.swift in Sources */,
