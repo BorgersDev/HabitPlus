@@ -17,28 +17,13 @@ enum WebService {
       
     private static func completeUrl(path: Endpoint) -> URLRequest? {
         guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else { return nil}
-                return URLRequest(url: url)
+                
+        return URLRequest(url: url)
     }
         
-        static func postUser(fullName: String,
-                             email: String,
-                             password: String,
-                             document: String,
-                             phoneNumber: String,
-                             birthDate: String,
-                             gender: Int) {
+    static func postUser(request: SignUpRequest) {
             
-            let json: [String: Any] = [
-                "name": fullName,
-                "email": email,
-                "document": document,
-                "phone": phoneNumber,
-                "gender": gender,
-                "birthday": birthDate,
-                "password": password
-            ]
-            
-            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            guard let jsonData = try? JSONEncoder().encode(request) else {return}
             
             guard var urlRequest = completeUrl(path: .postUser) else {return}
             

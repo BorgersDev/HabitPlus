@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E326C6102B46207200315A7B /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326C60F2B46207200315A7B /* SignUpRequest.swift */; };
 		E3568C7A2B3D6F5D002BE9E7 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3568C792B3D6F5D002BE9E7 /* LoadingButtonView.swift */; };
 		E3568C7D2B44E221002BE9E7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3568C7C2B44E221002BE9E7 /* WebService.swift */; };
 		E36A63B72B3C8A1A006C0F4B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36A63B62B3C8A1A006C0F4B /* String+Extension.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E326C60F2B46207200315A7B /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		E3568C792B3D6F5D002BE9E7 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		E3568C7C2B44E221002BE9E7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		E36A63B62B3C8A1A006C0F4B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				E39CADAD2B3A1EE80035244A /* SignUpUIState.swift */,
+				E326C60F2B46207200315A7B /* SignUpRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				E39CAD942B37525D0035244A /* LogInViewModel.swift in Sources */,
 				E3F173EE2B3C20CC0084413D /* CustomTextFieldStyle.swift in Sources */,
 				E3F173EB2B3B35740084413D /* EditTextView.swift in Sources */,
+				E326C6102B46207200315A7B /* SignUpRequest.swift in Sources */,
 				E39CAD9A2B3843440035244A /* LogInViewRouter.swift in Sources */,
 				E39CAD8C2B372ECB0035244A /* SplashViewModel.swift in Sources */,
 			);
