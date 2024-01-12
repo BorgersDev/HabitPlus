@@ -36,7 +36,7 @@ class SignUpViewModel: ObservableObject {
             return
         }
         
-        formatter.dateFormat = "yyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         let birthDate = formatter.string(from: dateFormatted)
         
         
@@ -47,13 +47,25 @@ class SignUpViewModel: ObservableObject {
                                                    document: document,
                                                    phoneNumber: phoneNumber,
                                                    birthDate: birthDate,
-                                                   gender: gender.index))
+                                                   gender: gender.index)) { (sucessResponse, errorResponse) in
+            if let error = errorResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+
+                }
+            }
+            
+            if let sucess = sucessResponse {
+                DispatchQueue.main.async {
+                    self.publisher.send(sucess)
+                    if sucess {
+                        self.uiState = .sucess
+                    }
+                }
+            }
+            
+        }
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-////              self.uiState = .error("Email already used")
-//            self.uiState = .sucess
-//            self.publisher.send(true)
-//        }
     }
 }
 
