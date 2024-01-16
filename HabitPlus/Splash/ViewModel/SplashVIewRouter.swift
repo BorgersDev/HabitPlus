@@ -5,7 +5,7 @@
 //  Created by Arthur Borges on 23/12/23.
 //
 
-import SwiftUIre
+import SwiftUI
 
 enum SplashVIewRouter {
     static func makeLogInView() -> some View {

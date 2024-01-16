@@ -14,6 +14,7 @@ enum WebService {
     case base = "https://habitplus-api.tiagoaguiar.co"
     
     case postUser = "/users"
+    case login = "/auth/login"
   }
     enum NetworkError{
         case badRequest
@@ -36,13 +37,13 @@ enum WebService {
     
     return URLRequest(url: url)
   }
-    private static func call(path: Endpoint, contentType: ContentType, data: Data?, completion: @escaping (Bool?, ErrorResponse?)-> Void)){
+    private static func call(path: Endpoint, contentType: ContentType, data: Data?, completion: @escaping (Result)-> Void){
 
         guard var urlRequest = completeUrl(path: path) else { return }
         
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
-        urlRequest.setValue(ContentType.RawValue, forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = data
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -55,6 +56,9 @@ enum WebService {
                 switch r.statusCode {
                 case 400:
                     completion(.failure(.badRequest, data))
+                    break
+                case 401:
+                    completion(.failure(.unauthorized , data))
                     break
                 case 404:
                     completion(.failure(.notFound, data))
@@ -85,7 +89,13 @@ enum WebService {
                              params: [URLQueryItem],
                              completion: @escaping (Result)-> Void){
         
-        call(path: path, contentType: .json, data: jsonData, completion: completion)
+        guard let urlRequest = completeUrl(path: path) else { return }
+        
+        guard let absoluteUlr = urlRequest.url?.absoluteString else {return}
+        var components = URLComponents(string: absoluteUlr)
+        components?.queryItems = params
+        
+        call(path: path, contentType: .formUlr, data: components?.query?.data(using: .utf8), completion: completion)
     }
   
   static func postUser(request: SignUpRequest, completion: @escaping (Bool?, ErrorResponse?)-> Void) {
@@ -111,11 +121,14 @@ enum WebService {
   }
     
     static func login(request: LogInRequest, completion: @escaping (LogInResponse?, ErrorResponse?)-> Void) {
-        call(path: .postUser, body: request) { result in
+        call(path: .login, params: [
+            URLQueryItem(name: "username", value: request.email),
+            URLQueryItem(name: "password", value: request.password)
+        ]) { result in
             switch result {
             case .failure(let error, let data):
                 if let data = data {
-                    if error == .badRequest {
+                    if error == .unauthorized {
                         
                         let decoder = JSONDecoder()
                         let response = try? decoder.decode(ErrorResponse.self, from: data)
@@ -124,7 +137,10 @@ enum WebService {
                 }
                 break
             case .sucess(let data):
-                completion(true, nil)
+                let decoder = JSONDecoder()
+                let response = try? decoder.decode(LogInResponse.self, from: data)
+                completion(response, nil)
+                break
                 print(String(data: data, encoding: .utf8))
 
             }

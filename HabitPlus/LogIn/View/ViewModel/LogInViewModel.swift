@@ -40,6 +40,20 @@ class LogInViewModel: ObservableObject {
        
         WebService.login (request: LogInRequest (email: email,
                                                  password: password)){ (sucessResponse, errorResponse) in
+            
+            if let error = errorResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+
+                }
+            }
+            
+            if let sucess = sucessResponse {
+                DispatchQueue.main.async {
+                    print(sucess)
+                    self.uiState = .goToHomeScreen
+                }
+            }
         }
     }
 }
