@@ -10,9 +10,6 @@ import SwiftUI
 struct SplashView: View {
     @ObservedObject var viewModel: SplashViewModel
     
-    @State var emaiil = ""
-    @State var password = ""
-    
     var body: some View {
         Group {
             switch viewModel.uiState {

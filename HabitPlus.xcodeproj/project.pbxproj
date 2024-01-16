@@ -13,6 +13,8 @@
 		E3568C7A2B3D6F5D002BE9E7 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3568C792B3D6F5D002BE9E7 /* LoadingButtonView.swift */; };
 		E3568C7D2B44E221002BE9E7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3568C7C2B44E221002BE9E7 /* WebService.swift */; };
 		E36A63B72B3C8A1A006C0F4B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36A63B62B3C8A1A006C0F4B /* String+Extension.swift */; };
+		E37A9DCA2B5531AD000A71BD /* LogInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A9DC92B5531AD000A71BD /* LogInRequest.swift */; };
+		E37A9DCC2B55338C000A71BD /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A9DCB2B55338C000A71BD /* LogInResponse.swift */; };
 		E39CAD762B3513CE0035244A /* HabitPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CAD752B3513CE0035244A /* HabitPlusApp.swift */; };
 		E39CAD7A2B3513CF0035244A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39CAD792B3513CF0035244A /* Assets.xcassets */; };
 		E39CAD7D2B3513CF0035244A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39CAD7C2B3513CF0035244A /* Preview Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		E3568C792B3D6F5D002BE9E7 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		E3568C7C2B44E221002BE9E7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		E36A63B62B3C8A1A006C0F4B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E37A9DC92B5531AD000A71BD /* LogInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInRequest.swift; sourceTree = "<group>"; };
+		E37A9DCB2B55338C000A71BD /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
 		E39CAD722B3513CE0035244A /* HabitPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39CAD752B3513CE0035244A /* HabitPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPlusApp.swift; sourceTree = "<group>"; };
 		E39CAD792B3513CF0035244A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,7 +200,9 @@
 		E39CAD902B37521D0035244A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E37A9DC92B5531AD000A71BD /* LogInRequest.swift */,
 				E39CAD972B383DD60035244A /* LogInUIState.swift */,
+				E37A9DCB2B55338C000A71BD /* LogInResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 			files = (
 				E326C6122B4D452C00315A7B /* SignUpResponse.swift in Sources */,
 				E39CADA82B38D68F0035244A /* SignUpVIew.swift in Sources */,
+				E37A9DCA2B5531AD000A71BD /* LogInRequest.swift in Sources */,
 				E39CAD922B3752380035244A /* LogInView.swift in Sources */,
 				E39CAD962B3753660035244A /* SplashVIewRouter.swift in Sources */,
 				E3568C7A2B3D6F5D002BE9E7 /* LoadingButtonView.swift in Sources */,
@@ -394,6 +401,7 @@
 				E39CADB02B3A1F2C0035244A /* SignUpViewModel.swift in Sources */,
 				E39CADAE2B3A1EE80035244A /* SignUpUIState.swift in Sources */,
 				E39CAD862B35146E0035244A /* SplashView.swift in Sources */,
+				E37A9DCC2B55338C000A71BD /* LogInResponse.swift in Sources */,
 				E326C6142B4D4B4300315A7B /* ErrorResponse.swift in Sources */,
 				E39CADAC2B3A15210035244A /* Gender.swift in Sources */,
 				E39CAD982B383DD60035244A /* LogInUIState.swift in Sources */,

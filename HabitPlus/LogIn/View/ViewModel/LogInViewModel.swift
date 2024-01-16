@@ -37,9 +37,9 @@ class LogInViewModel: ObservableObject {
     
     func login(){
         self.uiState = .loading
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-              self.uiState = .error("User not found")
-//            self.uiState = .goToHomeScreen
+       
+        WebService.login (request: LogInRequest (email: email,
+                                                 password: password)){ (sucessResponse, errorResponse) in
         }
     }
 }
