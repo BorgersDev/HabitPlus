@@ -64,6 +64,7 @@ struct LogInView: View {
                         .navigationBarTitle("Login", displayMode: .inline)
                         .navigationBarHidden(navigationBarHidden)
                 }
+                
             }
         }
         

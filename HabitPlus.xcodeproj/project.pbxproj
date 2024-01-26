@@ -200,8 +200,8 @@
 		E39CAD902B37521D0035244A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E37A9DC92B5531AD000A71BD /* LogInRequest.swift */,
 				E39CAD972B383DD60035244A /* LogInUIState.swift */,
+				E37A9DC92B5531AD000A71BD /* LogInRequest.swift */,
 				E37A9DCB2B55338C000A71BD /* LogInResponse.swift */,
 			);
 			path = Model;

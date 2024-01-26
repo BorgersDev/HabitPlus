@@ -10,13 +10,12 @@ import Combine
 
 class LogInViewModel: ObservableObject {
     
-    private var cancellable: AnyCancellable?
-    
-    private let publisher = PassthroughSubject<Bool, Never>()
-    
     @Published var email = ""
     @Published var password = ""
     
+    private var cancellable: AnyCancellable?
+    
+    private let publisher = PassthroughSubject<Bool, Never>()
     
     @Published var uiState: LogInUIState = .none
     
@@ -39,7 +38,8 @@ class LogInViewModel: ObservableObject {
         self.uiState = .loading
        
         WebService.login (request: LogInRequest (email: email,
-                                                 password: password)){ (sucessResponse, errorResponse) in
+                                                 password: password)) { (successResponse,
+                                                                         errorResponse) in
             
             if let error = errorResponse {
                 DispatchQueue.main.async {
@@ -48,9 +48,9 @@ class LogInViewModel: ObservableObject {
                 }
             }
             
-            if let sucess = sucessResponse {
+            if let success = successResponse {
                 DispatchQueue.main.async {
-                    print(sucess)
+                    print(success)
                     self.uiState = .goToHomeScreen
                 }
             }
